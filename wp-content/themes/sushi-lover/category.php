@@ -1,7 +1,8 @@
 <?php
 /**
  * Template to display the blog category page, e.g. /blog/kinder/
- * 
+ *
+ * @author Niels Lange
  * @package WordPress
  * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0

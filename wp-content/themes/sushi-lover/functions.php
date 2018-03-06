@@ -20,8 +20,9 @@
  * For more information on hooks, actions, and filters,
  * {@link https://codex.wordpress.org/Plugin_API}
  *
+ * @author Niels Lange
  * @package WordPress
- * @package Sushi Lovers
+ * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
  */
 

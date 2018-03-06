@@ -2,10 +2,12 @@
 /**
  * Template to display the workshop detail pages
  *
- * Template Name: Mentoring Detail Page
- *
- * @package Sushi Lovers
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
+ *
+ * Template Name: Mentoring Detail Page
  */
 ?>
 

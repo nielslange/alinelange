@@ -2,10 +2,12 @@
 /**
  * Template to display the mentoring affiliate page
  *
- * Template Name: Mentoring Affiliate Page
- *
- * @package Sushi Lovers
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
+ *
+ * Template Name: Mentoring Affiliate Page
  */
 ?>
 

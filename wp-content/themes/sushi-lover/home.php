@@ -1,7 +1,8 @@
 <?php
 /**
- * Template to display the blog overview page, thus /blog
- * 
+ * Template to display the blog page
+ *
+ * @author Niels Lange
  * @package WordPress
  * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0

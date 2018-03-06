@@ -1,8 +1,10 @@
 <?php 
 /**
  * Template to display the homepage
- * 
- * @package Sushi Lovers
+ *
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
  */
 ?>

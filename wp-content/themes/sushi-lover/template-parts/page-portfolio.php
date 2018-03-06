@@ -1,14 +1,15 @@
 <?php
 /**
-* Template to display the portfolio pages
-*
-* @author Semantics LLC
-* @since Sushi Lovers 1.0
-* Template Name: Portfolio
-*/
-$args = array(
-		'post_type' => 'portfolio',
-);
+ * Template to display the portfolio pages
+ *
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
+ * @since Sushi Lovers 1.0
+ *
+ * Template Name: Portfolio
+ */
+$args = array( 'post_type' => 'portfolio' );
 $temp = new WP_Query($args);
 
 get_header();

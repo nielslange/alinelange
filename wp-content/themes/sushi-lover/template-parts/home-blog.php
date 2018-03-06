@@ -1,8 +1,10 @@
 <?php 
 /**
  * Template to display the aline section on the homepage
- * 
- * @author Semantics LLC 
+ *
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
  */
 

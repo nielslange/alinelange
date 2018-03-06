@@ -10,7 +10,10 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package sushi
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
+ * @since Sushi Lovers 1.0
  */
 
 global $wp_query;

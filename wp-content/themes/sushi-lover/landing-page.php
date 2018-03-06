@@ -4,7 +4,9 @@
  *
  * Template Name: Landing Page
  *
- * @package Sushi Lovers
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
  */
 

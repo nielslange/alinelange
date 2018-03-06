@@ -4,6 +4,9 @@
  *
  * Used for both single and index/archive/search.
  *
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
  */
 $args = array(

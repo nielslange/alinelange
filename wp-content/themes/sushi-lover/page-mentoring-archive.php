@@ -2,11 +2,14 @@
 /**
  * Template to display the mentoring archive pages
  *
- * Template Name: Mentoring Archive Page
- *
- * @package Sushi Lovers
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
+ *
+ * Template Name: Mentoring Archive Page
  */
+
 //* Return if ACF hasn't been activated
 if ( !class_exists('acf') ) return;
 ?>

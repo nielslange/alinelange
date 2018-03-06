@@ -1,3 +1,13 @@
+<?php
+/**
+ * Template to display the shop section on the homepage
+ *
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
+ * @since Sushi Lovers 1.0
+ */
+?>
 <div id="home-shop">
 	<div class="container">
 		

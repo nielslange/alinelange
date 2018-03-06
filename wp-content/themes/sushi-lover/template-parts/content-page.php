@@ -2,6 +2,9 @@
 /**
  * The template used for displaying page content
  *
+ * @author Niels Lange
+ * @package WordPress
+ * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
  */
 ?>
