@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+body {
+	padding: 0;
+}
+
+nav {
+	display: none;
+}
+
+#footer-upper {
+	display: none;
+}

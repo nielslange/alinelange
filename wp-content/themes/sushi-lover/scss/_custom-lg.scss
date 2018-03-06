@@ -1,0 +1,21 @@
+@media screen and (min-width: 1200px) {
+    body {
+        overflow-y: scroll;
+    }
+    
+	.container { 
+		max-width: 992px; 
+	}
+	
+	#shop .container { 
+        max-width: 1170px; 
+    }
+    
+    #blog .container { 
+        max-width: 1170px; 
+    }
+
+	#single-portfolio {
+	   padding: 200px 0;
+	}	
+}

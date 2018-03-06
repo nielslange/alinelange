@@ -1,0 +1,102 @@
+.image-holder img, 
+.image-holder span,
+.image-holder:after,
+.image-holder:hover img,
+.image-holder:hover span,
+.image-holder:hover:after {
+    -webkit-transition: all .5s ease-in-out;
+       -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+         -o-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+}
+
+.image-holder {
+    border: 1px solid darken($light-grey, 20%);
+    display:inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    img {
+        margin-bottom:0;
+        width: 100%;
+    }
+    span {
+        display: block;
+        color: $dark-grey;
+        font-family: Lato;
+        font-size: 20px;
+        font-weight: 300;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        padding: 50px 20px;
+        position: absolute;
+        top: 0;
+        transform: translate(0, 0);
+        text-align: center;
+        visibility: hidden;
+        width: 100%;
+        z-index: 10;
+    }
+    &:hover {
+        img {
+            transform: scale(1.1);
+        }
+        span {
+            opacity: 1;
+            visibility: visible;
+        }
+        &:after {
+            background: rgba(255,255,255,0.9);
+        }
+    }
+    &:after {
+        background: rgba(255,255,255,0);
+        content:'';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+.image-holder-xs {
+    border: 1px solid darken($light-grey, 20%);
+    display:inline-block;
+    overflow: hidden;
+    width: 100%;
+    img {
+        margin-bottom:0;
+        width: 100%;
+    }
+}
+
+.image-holder-sm {
+    position: relative;
+    border: 1px solid darken($light-grey, 20%);
+    display:inline-block;
+    overflow: hidden;
+    width: 100%;
+    img {
+        margin-bottom:0;
+        width: 100%;
+    }
+    span {
+        position: absolute;
+        bottom: 0;
+        background: rgba(255,255,255,0.85);
+        width: 100%;
+        padding: 5px 10px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #home-portfolio .col-sm-4 div {
+        margin-bottom: 7px;
+    }
+}
