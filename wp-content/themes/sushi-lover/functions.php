@@ -611,6 +611,18 @@ function sushilovers_load_scripts() {
 	wp_enqueue_script( 'viewport-bug-workaround', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array(), '1.0.0', true );
 }
 
+/**
+ * Enqueue login styles
+ *
+ * @since Sushi Lovers 3.0
+ * @link https://codex.wordpress.org/Function_Reference/wp_enqueue_script
+ * @return void
+ */
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+function my_login_stylesheet() {
+    wp_enqueue_style( 'login-style', get_template_directory_uri() . '/css/login.css' );
+}
+
 add_filter('woocommerce_variable_price_html', 'bbloomer_custom_variation_price', 10, 2);
 function bbloomer_custom_variation_price( $price, $product ) {
 	$price = '';
