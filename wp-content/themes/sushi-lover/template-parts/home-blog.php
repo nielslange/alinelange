@@ -25,14 +25,17 @@ $recent_posts = wp_get_recent_posts($args);
 			<?php $i = 1; foreach ($recent_posts as $post) : ?>
 			<div class="col-sm-4">
 				<?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post['ID']), 'blog_horizontal'); ?>
-                <div class="image-holder">
-					<a href="<?php echo get_permalink($post['ID']);?>">
-                        <img alt="" src="<?php echo $thumb[0]; ?>" class="img-responsive">
-                        <span><?php echo $post['post_title']; ?></span> 
-                    </a>
-                </div>
-				<h3><?php echo $post['post_title']; ?></h3>
-				<p><?php echo $post['post_excerpt'];?> <a href="<?php echo get_permalink($post['ID']);?>">weiterlesen</a></p>
+                <ul class="caption-style-1">
+                    <li>
+                        <img src="<?php echo $thumb[0]; ?>" alt="<?php echo $post['post_excerpt'];?>" class="img-responsive">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="caption-text">
+                                <h1><?php echo $post['post_title']; ?></h1>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
 			</div>
 			<?php if ($i % 3 == 0 && $i != $count) : ?>
 			</div><div class="row">
@@ -44,34 +47,19 @@ $recent_posts = wp_get_recent_posts($args);
             <?php $i = 1; foreach ($recent_posts as $post) : ?>
             <div class="col-sm-4">
                 <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post['ID']), 'blog_horizontal'); ?>
-                <div class="image-holder-xs">
-                    <a href="<?php echo get_permalink($post['ID']);?>">
-                        <img alt="" src="<?php echo $thumb[0]; ?>" class="img-responsive">
-                    </a>
-                </div>
-                <h3><?php echo $post['post_title']; ?></h3>
-                <p><?php echo $post['post_excerpt'];?></p>
-	            <p class="text-center">
-	                <a href="<?php echo get_permalink($post['ID']);?>" class="btn btn-turquoise btn-block">weiterlesen</a>
-	            </p>
+                <a href="<?php echo get_permalink($post['ID']);?>">
+                    <img src="<?php echo $thumb[0]; ?>" alt="<?php echo $post['post_excerpt'];?>" class="img-responsive">
+                </a>
+                <h3><a href="<?php echo get_permalink($post['ID']);?>"><?php echo $post['post_title']; ?></a></h3>
+                <br>
             </div>
             <?php if ($i % 3 == 0 && $i != $count) : ?>
             </div><div class="row">
             <?php endif; ?>
             <?php $i++; endforeach; ?>
-            
-            
         </div>
 
-    	<br>
-        
 		<?php wp_reset_query(); ?>
-        
-		<p class="text-center">
-	        <a href="<?php the_field('home_blog_button_link'); ?>" class="btn btn-lg btn-turquoise">
-	            <?php the_field('home_blog_button_title'); ?>
-	        </a>
-        </p>
         
 	</div>
 </div>
