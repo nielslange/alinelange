@@ -70,8 +70,8 @@ get_header();
 					
 					the_posts_navigation(
 						array(
-							'prev_text' => '<span class="meta-nav" aria-hidden="true"><i class="fa fa-fw fa-chevron-left"></i> ' . __( 'Ältere Beiträge', 'berlin' ) . '</span> ',
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Neuere Beiträge', 'berlin' ) . ' <i class="fa fa-fw fa-chevron-right"></i></span> ',
+							'prev_text' => '<span class="meta-nav" aria-hidden="true"><i class="far fa-fw fa-chevron-left"></i> ' . __( 'Ältere Beiträge', 'berlin' ) . '</span> ',
+							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Neuere Beiträge', 'berlin' ) . ' <i class="far fa-fw fa-chevron-right"></i></span> ',
 							'screen_reader_text' => ' ',
 						) 
 					); 

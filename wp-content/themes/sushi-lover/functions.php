@@ -605,8 +605,10 @@ function sushilovers_load_scripts() {
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.11.3', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.5', true );
 	wp_enqueue_script( 'bootstrap-select', get_template_directory_uri() . '/js/bootstrap-select.min.js', array(), '1.10.0', true );
-	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '2.6.0', true );
-	wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), '1.5.3', true );
+    wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '2.6.0', true );
+    wp_enqueue_script( 'fontawesome', get_template_directory_uri() . '/assets/fontawesome/js/fontawesome-all.min.js', array(), '5.0.8', true );
+    wp_enqueue_script( 'fontawesome', get_template_directory_uri() . '/assets/fontawesome/js/fa-v4-shims.min.js', array(), '5.0.8', true );
+    wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), '1.5.3', true );
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'viewport-bug-workaround', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array(), '1.0.0', true );
 }

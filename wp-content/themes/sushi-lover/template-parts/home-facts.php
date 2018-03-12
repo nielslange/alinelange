@@ -40,10 +40,10 @@
                     <div class="col-sm-1">
                     </div>
                     <a class="left carousel-control" href="#factsCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left fa fa-long-arrow-left" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-chevron-left fal fa-long-arrow-left" aria-hidden="true"></span>
                     </a>
                     <a class="right carousel-control" href="#factsCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right fa fa-long-arrow-right" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-chevron-right fal fa-long-arrow-right" aria-hidden="true"></span>
                     </a>
                 </div>
             </div>

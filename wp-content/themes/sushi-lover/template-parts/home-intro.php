@@ -22,7 +22,7 @@ if ( !class_exists('acf') ) return;
 
                 <div class="text-right">
                     <a href="<?php the_field('home_intro_link_url'); ?>">
-                        <i class="fa fa-long-arrow-right"></i>
+                        <i class="far fa-long-arrow-right"></i>
                         <?php the_field('home_intro_link_text'); ?>
                     </a>
                 </div>

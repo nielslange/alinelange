@@ -21,8 +21,8 @@ $c = count(get_field('home_quotes_quote_items'));
     					<div class="col-sm-6">
 		      				<p><img src="<?php echo $image[0]; ?>" alt="" class="img-responsive"></p>
                             <p class="visible-sm">
-	                            <a data-target="#home-quotes-carousel" data-slide-to="<?php echo $i == 1 ? $c-1 : $j; ?>"><i class="fa fa-chevron-left"></i> Vorheriges Zitat</a> | 
-	                            <a data-target="#home-quotes-carousel" data-slide-to="<?php echo $i == $c ? 0 : $i; ?>">Nächstes Zitat <i class="fa fa-chevron-right"></i></a>
+	                            <a data-target="#home-quotes-carousel" data-slide-to="<?php echo $i == 1 ? $c-1 : $j; ?>"><i class="far fa-chevron-left"></i> Vorheriges Zitat</a> |
+	                            <a data-target="#home-quotes-carousel" data-slide-to="<?php echo $i == $c ? 0 : $i; ?>">Nächstes Zitat <i class="far fa-chevron-right"></i></a>
                             </p>
     					</div>
     					<div class="col-sm-6">
@@ -32,8 +32,8 @@ $c = count(get_field('home_quotes_quote_items'));
     					</div>
     				</div>
                     <p id="navigation" class="hidden-sm">
-		                <a data-target="#home-quotes-carousel" data-slide-to="<?php echo $i == 1 ? $c-1 : $j; ?>"><i class="fa fa-chevron-left"></i> Vorheriges Zitat</a> |
-	                    <a data-target="#home-quotes-carousel" data-slide-to="<?php echo $i == $c ? 0 : $i; ?>">Weiteres Zitat <i class="fa fa-chevron-right"></i></a>
+		                <a data-target="#home-quotes-carousel" data-slide-to="<?php echo $i == 1 ? $c-1 : $j; ?>"><i class="far fa-chevron-left"></i> Vorheriges Zitat</a> |
+	                    <a data-target="#home-quotes-carousel" data-slide-to="<?php echo $i == $c ? 0 : $i; ?>">Weiteres Zitat <i class="far fa-chevron-right"></i></a>
                     </p>
     			</div>
 				<?php $i++; $j++; endwhile; ?>
