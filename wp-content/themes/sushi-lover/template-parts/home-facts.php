@@ -8,39 +8,44 @@
  * @since Sushi Lovers 3.0
  */
 ?>
-<div id="home-infos">
+<div id="home-facts">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <header id="factsCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-pause="" data-interval="10000">
+                <div id="factsCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-pause="" data-interval="10000">
                     <div class="row">
                         <div class="col-sm-1">
 
                         </div>
                         <div class="col-sm-10">
                             <div class="carousel-inner">
-                                <div class="item <?php echo $i == 0 ? 'active' : ''; ?>">
+                                <div class="item active">
                                     <div>
-                                        <br><br>
-                                        <br><br>
-                                        FACTS
-                                        <br><br>
-                                        <br><br>
+                                        <?php the_field('home_aline_text'); ?>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div>
+                                        <?php the_field('home_aline_image'); ?>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div>
+                                        <?php the_field('home_aline_video'); ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-1">
-
-                        </div>
                     </div>
-                    <a class="left carousel-control" href="#heroCarousel" data-slide="prev">
+                    <div class="col-sm-1">
+                    </div>
+                    <a class="left carousel-control" href="#factsCarousel" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left fa fa-long-arrow-left" aria-hidden="true"></span>
                     </a>
-                    <a class="right carousel-control" href="#heroCarousel" data-slide="next">
+                    <a class="right carousel-control" href="#factsCarousel" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right fa fa-long-arrow-right" aria-hidden="true"></span>
                     </a>
-                </header>
+                </div>
             </div>
         </div>
     </div>

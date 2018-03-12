@@ -589,7 +589,7 @@ function sushilovers_load_styles() {
 	wp_enqueue_style( 'bootstrap-select', get_stylesheet_directory_uri() . '/css/bootstrap-select.min.css' );
 	wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'flexslider', get_stylesheet_directory_uri() . '/css/flexslider.css' );
-	wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/css/custom.min.css' );
+	wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/assets/custom.css' );
 	wp_enqueue_style( 'viewport-bug-workaround', get_stylesheet_directory_uri() . '/css/ie10-viewport-bug-workaround.css' );
 }
 

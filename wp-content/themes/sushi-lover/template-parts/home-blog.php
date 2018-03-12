@@ -8,19 +8,27 @@
  * @since Sushi Lovers 1.0
  */
 
+//* Return if ACF hasn't been activated
+if ( !class_exists('acf') ) return;
+
+//* Prepare recent blog posts
 $count = get_field('home_blog_visible_posts');
 $args = array(
-	'numberposts' 		=> $count,
-	'orderby' 			=> 'post_date',
-	'order' 			=> 'desc',
-	'post_type' 		=> 'post',
-	'post_status' 		=> 'publish',
-	);
+	'numberposts' 	=> $count,
+	'orderby' 		=> 'post_date',
+	'order' 		=> 'desc',
+	'post_type' 	=> 'post',
+	'post_status'   => 'publish',
+);
 $recent_posts = wp_get_recent_posts($args);
 ?>
 <div id="home-blog">
 	<div class="container">
-    
+
+        <?php if ( get_field('home_blog_title') ) : ?>
+            <h2><?php the_field('home_blog_title'); ?></h2>
+        <?php endif; ?>
+
 		<div class="row hidden-xs">
 			<?php $i = 1; foreach ($recent_posts as $post) : ?>
 			<div class="col-sm-4">
