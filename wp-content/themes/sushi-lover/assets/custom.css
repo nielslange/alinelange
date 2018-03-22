@@ -508,6 +508,22 @@ body,
 	margin: 5px 0;
 }
 
+#infos h1 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-weight: 300;
+}
+
+#infos .sidebar-infos ul {
+	margin: 20px 0 0 0;
+	padding: 0;
+}
+
+#infos .sidebar-infos ul li {
+	list-style: none;
+	margin: 5px 0;
+}
+
 #single-portfolio {
 	overflow: hidden;
 }
@@ -1815,6 +1831,10 @@ label {
 
 	.container {
 		max-width: 992px;
+	}
+
+	#infos .container {
+		max-width: 1170px;
 	}
 
 	#shop .container {

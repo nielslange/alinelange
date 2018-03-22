@@ -153,103 +153,113 @@ add_action( 'after_setup_theme', 'sushilovers_setup' );
  */
 function sushilovers_widgets_init() {
 	register_sidebar( array(
-			'name' => esc_html__( 'Main Sidebar', 'sushilovers' ),
-			'id' => 'sidebar-main',
-			'description' => esc_html__( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Main Sidebar', 'sushilovers' ),
+		'id'            => 'sidebar-main',
+		'description'   => esc_html__( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Blog Sidebar', 'sushilovers' ),
-			'id' => 'sidebar-blog',
-			'description' => esc_html__( 'Appears in the sidebar on the blog and archive pages only', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Infos Sidebar', 'sushilovers' ),
+		'id'            => 'sidebar-infos',
+		'description'   => esc_html__( 'Appears in the sidebar on the information only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Single Post Sidebar', 'sushilovers' ),
-			'id' => 'sidebar-single',
-			'description' => esc_html__( 'Appears in the sidebar on single posts only', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Blog Sidebar', 'sushilovers' ),
+		'id'            => 'sidebar-blog',
+		'description'   => esc_html__( 'Appears in the sidebar on the blog and archive pages only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Page Sidebar', 'sushilovers' ),
-			'id' => 'sidebar-page',
-			'description' => esc_html__( 'Appears in the sidebar on pages only', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Single Post Sidebar', 'sushilovers' ),
+		'id'            => 'sidebar-single',
+		'description'   => esc_html__( 'Appears in the sidebar on single posts only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'WooCommerce Sidebar', 'sushilovers' ),
-			'id' => 'woocommerce-sidebar',
-			'description' => esc_html__( 'Appears in the sidebar on product pages only', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Page Sidebar', 'sushilovers' ),
+		'id'            => 'sidebar-page',
+		'description'   => esc_html__( 'Appears in the sidebar on pages only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'First Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-1',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '',
-			'after_widget' => '',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'WooCommerce Sidebar', 'sushilovers' ),
+		'id'            => 'woocommerce-sidebar',
+		'description'   => esc_html__( 'Appears in the sidebar on product pages only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Second Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-2',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'First Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-1',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Third Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-3',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Second Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-2',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Fourth Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-4',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '',
-			'after_widget' => '',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Third Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-3',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Fifth Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-5',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '',
-			'after_widget' => '',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Fourth Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-4',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Fifth Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-5',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
 	) );
 }
 add_action( 'widgets_init', 'sushilovers_widgets_init' );
