@@ -1,5 +1,5 @@
 
-# Ignore everything in the root except the "wp-content" directory, the config 
+# Ignore everything in the root except the "wp-content" directory, the config
 # fies and the meta files.
 /*
 .*
@@ -28,4 +28,5 @@ wp-content/plugins/*
 
 # Ignore everything in the "themes" directory, except specified themes
 wp-content/themes/*
+wp-content/themes/sushi-lover/node_modules/*
 !wp-content/themes/sushi-lover/

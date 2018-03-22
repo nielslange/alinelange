@@ -22,7 +22,7 @@ $args = array(
 );
 $recent_posts = wp_get_recent_posts($args);
 ?>
-<div id="home-blog">
+<div id="home-blog" class="space">
 	<div class="container">
 
         <?php if ( get_field('home_blog_title') ) : ?>
@@ -53,17 +53,11 @@ $recent_posts = wp_get_recent_posts($args);
 	
         <div class="row visible-xs">
             <?php $i = 1; foreach ($recent_posts as $post) : ?>
-            <div class="col-sm-4">
-                <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post['ID']), 'blog_horizontal'); ?>
-                <a href="<?php echo get_permalink($post['ID']);?>">
-                    <img src="<?php echo $thumb[0]; ?>" alt="<?php echo $post['post_excerpt'];?>" class="img-responsive">
-                </a>
-                <h3><a href="<?php echo get_permalink($post['ID']);?>"><?php echo $post['post_title']; ?></a></h3>
-                <br>
+            <div class="col-xs-12">
+                <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post['ID']), 'full'); ?>
+                <p><a href="<?php echo get_permalink($post['ID']);?>"><img src="<?php echo $thumb[0]; ?>" alt="<?php echo $post['post_excerpt'];?>" class="img-responsive"></a></p>
+                <p><a href="<?php echo get_permalink($post['ID']);?>"><?php echo $post['post_title']; ?></a></p>
             </div>
-            <?php if ($i % 3 == 0 && $i != $count) : ?>
-            </div><div class="row">
-            <?php endif; ?>
             <?php $i++; endforeach; ?>
         </div>
 

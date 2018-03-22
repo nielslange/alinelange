@@ -11,22 +11,25 @@
 //* Return if ACF hasn't been activated
 if ( !class_exists('acf') ) return;
 
+//* Prepare variables
+$text        = get_field('home_intro_text');
+$link_url    = get_field('home_intro_link_url');
+$link_text   = get_field('home_intro_link_url');
 ?>
-<div id="home-intro">
+<div id="home-intro" class="space">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <?php the_field('home_intro_text'); ?>
 
-                <?php if ( get_field('home_intro_link_url') && get_field('home_intro_link_text') ) : ?>
+                <?php echo $text; ?>
 
+                <?php if ( $link_url && $link_text ) : ?>
                 <div class="text-right">
-                    <a href="<?php the_field('home_intro_link_url'); ?>">
+                    <a href="<?php echo $link_url; ?>">
                         <i class="far fa-long-arrow-right"></i>
-                        <?php the_field('home_intro_link_text'); ?>
+                        <?php echo $link_text; ?>
                     </a>
                 </div>
-
                 <?php endif; ?>
 
             </div>

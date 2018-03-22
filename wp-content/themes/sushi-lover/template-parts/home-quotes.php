@@ -10,7 +10,7 @@
 $c = count(get_field('home_quotes_quote_items'));
 ?>
 
-<div id="home-quotes">
+<div id="home-quotes" class="space">
 	<div class="container">
 		<div id="home-quotes-carousel" class="carousel slide carousel-fade">
 			<div class="carousel-inner" role="listbox">

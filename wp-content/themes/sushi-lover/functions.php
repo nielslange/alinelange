@@ -586,10 +586,13 @@ function sushilovers_load_styles() {
 	wp_enqueue_style( 'lato', 'https://fonts.googleapis.com/css?family=Lato:400,300' );
 	wp_enqueue_style( 'nothing-you-could-do', 'https://fonts.googleapis.com/css?family=Nothing+You+Could+Do' );
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css' );
-	wp_enqueue_style( 'bootstrap-select', get_stylesheet_directory_uri() . '/css/bootstrap-select.min.css' );
+	wp_enqueue_style( 'bootstrap-select', get_stylesheet_directory_uri() . '/css/bootstrap.select.min.css' );
 	wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'flexslider', get_stylesheet_directory_uri() . '/css/flexslider.css' );
-	wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/assets/custom.css' );
+	wp_enqueue_style( 'slick', get_stylesheet_directory_uri() . '/assets/slick/slick.css' );
+	wp_enqueue_style( 'slick-theme', get_stylesheet_directory_uri() . '/assets/slick/slick-theme.css' );
+	wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/css/custom.min.css', null, time() );
+	#wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/assets/custom.css' );
 	wp_enqueue_style( 'viewport-bug-workaround', get_stylesheet_directory_uri() . '/css/ie10-viewport-bug-workaround.css' );
 }
 
@@ -609,7 +612,9 @@ function sushilovers_load_scripts() {
     wp_enqueue_script( 'fontawesome', get_template_directory_uri() . '/assets/fontawesome/js/fontawesome-all.min.js', array(), '5.0.8', true );
     wp_enqueue_script( 'fontawesome', get_template_directory_uri() . '/assets/fontawesome/js/fa-v4-shims.min.js', array(), '5.0.8', true );
     wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), '1.5.3', true );
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.min.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick/slick.min.js', array(), '1.8.1', true );
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/custom.js', array(), '1.0.0', true );
+	#wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'viewport-bug-workaround', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array(), '1.0.0', true );
 }
 

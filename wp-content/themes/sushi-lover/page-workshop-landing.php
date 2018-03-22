@@ -13,7 +13,7 @@
 
 <?php get_header(); ?>
 
-<div id="workshop" class="content-area">
+<div id="workshop" class="space content-area">
 
 	<?php if ( wc_memberships_is_user_active_member(get_current_user_id(), 'workshop') ||
 			   wc_memberships_is_user_active_member(get_current_user_id(), 'workshop-manual') ||

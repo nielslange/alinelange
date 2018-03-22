@@ -34,18 +34,17 @@ var projectURL              = 'dev.alinelange.de'; // Local project URL of your 
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
-var text_domain             = 'WPGULP'; // Your textdomain here.
-var translationFile         = 'WPGULP.pot'; // Name of the transalation file.
+var text_domain             = 'alinelange'; // Your textdomain here.
+var translationFile         = 'alinelange.pot'; // Name of the transalation file.
 var translationDestination  = './languages'; // Where to save the translation files.
-var packageName             = 'WPGULP'; // Package name.
-var bugReport               = 'https://AhmadAwais.com/contact/'; // Where can users report bugs.
-var lastTranslator          = 'Ahmad Awais <your_email@email.com>'; // Last translator Email ID.
-var team                    = 'WPTie <your_email@email.com>'; // Team's Email ID.
+var packageName             = 'alinelange'; // Package name.
+var bugReport               = 'http://nielslane.de/'; // Where can users report bugs.
+var lastTranslator          = 'Niels Lange <info@nielslane.de>'; // Last translator Email ID.
+var team                    = 'Niels Lange <info@nielslane.de>'; // Team's Email ID.
 
 // Style related.
 var styleSRC                = './assets/custom.css'; // Path to main .scss file.
-// var styleSRC                = './assets/css/style.scss'; // Path to main .scss file.
-var styleDestination        = './'; // Path to place the compiled CSS file.
+var styleDestination        = './css/'; // Path to place the compiled CSS file.
 // Default set to root folder.
 
 // JS Vendor related.
@@ -197,13 +196,13 @@ gulp.task('styles', function () {
 
         .pipe( rename( { suffix: '.min' } ) )
         .pipe( minifycss( {
-            maxLineLen: 10
+            maxLineLen: 0
         }))
         .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
         .pipe( gulp.dest( styleDestination ) )
 
         .pipe( filter( '**/*.css' ) ) // Filtering stream to only css files
-        .pipe( browserSync.stream() )// Reloads style.min.css if that is enqueued.
+        .pipe( browserSync.stream() ) // Reloads style.min.css if that is enqueued.
         .pipe( notify( { message: 'TASK: "styles" Completed! 💯', onLast: true } ) )
 });
 

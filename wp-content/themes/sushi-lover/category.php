@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<div id="blog">
+<div id="blog" class="space">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-9">

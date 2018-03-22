@@ -7,6 +7,8 @@
  * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
  */
+//* Return if ACF hasn't been activated
+if ( !class_exists('acf') ) return;
 
 $logo = wp_get_attachment_image_src(get_field('home_logo'), 'large');
 
