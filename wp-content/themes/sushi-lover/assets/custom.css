@@ -25,6 +25,10 @@ a {
 	color: #54B2B1;
 }
 
+a.secondary {
+	color: #aaa;
+}
+
 a:focus, a:hover {
 	color: #326e6e;
 	outline: none !important;
