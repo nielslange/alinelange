@@ -32,5 +32,5 @@ $logo = wp_get_attachment_image_src(get_field('home_logo'), 'large');
 	    	<span class="glyphicon glyphicon-chevron-right fa fa-chevron-right" aria-hidden="true"></span>
 	    </a>
 	</header>
-	<a href="#home-intro" id="more" style="z-index: 100;"><i class="fa-3x fas fa-caret-circle-down"></i></a>
+	<a href="#home-intro" id="more" style="z-index: 100;"><i class="fa-2x fas fa-chevron-down"></i></a>
 </div>
