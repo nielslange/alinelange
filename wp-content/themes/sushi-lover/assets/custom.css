@@ -217,6 +217,14 @@ body,
 	padding: 60px 0;
 }
 
+.home_aline_facts_items {
+	margin-top: 30px;
+}
+
+.home_aline_facts_items {
+	margin-top: 10px;
+}
+
 @media screen and (max-width: 767px) {
 	.space,
 	#shop {

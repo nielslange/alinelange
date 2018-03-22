@@ -18,10 +18,10 @@ if ( !class_exists('acf') ) return;
             <div>
                 <div class="row">
                     <div class="row">
-                        <div class="col-sm-4 col-sm-offset-2 text-right">
+                        <div class="col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2 text-right">
 			                <?php the_field('home_aline_text'); ?>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
 			                <?php $image_aline  = wp_get_attachment_image_src(get_field('home_aline_image'), 'medium'); ?>
                             <p><img alt="" src="<?php echo $image_aline[0]; ?>" class="img-responsive"></p>
                         </div>
@@ -32,22 +32,25 @@ if ( !class_exists('acf') ) return;
 	        <?php if ( have_rows('home_aline_facts_items') ) : ?>
             <div>
                 <div class="row">
-		            <?php $i = 1; while ( have_rows('home_aline_facts_items') ) : the_row(); ?>
-			            <?php $image = wp_get_attachment_image_src(get_sub_field('home_aline_facts_item_icon'), 'thumb'); ?>
-                        <div class="col-sm-6 col-md-4 col-xs-12">
-                            <img alt="" src="<?php echo $image[0]; ?>" class="icon pull-left"> <?php the_sub_field('home_aline_facts_item_text'); ?>
+                    <div class="col-sm-10 col-sm-offset-1 home_aline_facts_items">
+                        <div class="row">
+                            <?php $i = 1; while ( have_rows('home_aline_facts_items') ) : the_row(); ?>
+                                <?php $image = wp_get_attachment_image_src(get_sub_field('home_aline_facts_item_icon'), 'thumb'); ?>
+                                <div class="col-sm-6 col-md-4 col-xs-12">
+                                    <img alt="" src="<?php echo $image[0]; ?>" class="icon pull-left"> <?php the_sub_field('home_aline_facts_item_text'); ?>
+                                </div>
+                                <div class="clearfix visible-xs-block">&nbsp;</div>
+
+                                <?php if ( $i %2 == 0 ) : ?>
+                                    <div class="clearfix visible-sm-block">&nbsp;</div>
+                                <?php endif; ?>
+
+                                <?php if ( $i %3 == 0 ) : ?>
+                                    <div class="clearfix visible-md-block visible-lg-block">&nbsp;</div>
+                                <?php endif; ?>
+                            <?php $i++; endwhile; ?>
                         </div>
-                        <div class="clearfix visible-xs-block">&nbsp;</div>
-
-			            <?php if ( $i %2 == 0 ) : ?>
-                            <div class="clearfix visible-sm-block">&nbsp;</div>
-			            <?php endif; ?>
-
-			            <?php if ( $i %3 == 0 ) : ?>
-                            <div class="clearfix visible-md-block visible-lg-block">&nbsp;</div>
-			            <?php endif; ?>
-
-			            <?php $i++; endwhile; ?>
+                    </div>
                 </div>
             </div>
 	        <?php endif; ?>
@@ -55,7 +58,7 @@ if ( !class_exists('acf') ) return;
 	        <?php if ( get_field('home_aline_video') ) : ?>
             <div>
                 <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1">
+                    <div class="col-sm-8 col-sm-offset-2 home_aline_facts_items">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/<?php the_field('home_aline_video'); ?>"></iframe>
                         </div>
