@@ -329,9 +329,9 @@ if ( !function_exists( 'sushilovers_entry_meta' ) ) {
 			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'sushilovers' ) );
 			if ( $categories_list ) {
 				printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-						_x( 'Categories', 'Used before category names.', 'sushilovers' ),
-						$categories_list
-						);
+					_x( 'Categories', 'Used before category names.', 'sushilovers' ),
+					$categories_list
+				);
 			}
 
 			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'sushilovers' ) );
@@ -378,6 +378,29 @@ function is_blog() {
 
 	return ( is_home() || is_archive() || is_single() ) && ($post_type == 'post');
 }
+
+/**
+ * Hide site title on shopping pages
+ *
+ * @since Sushi Lovers 3.0
+ * @link https://docs.woocommerce.com/wc-apidocs/function-is_shop.html
+ * @return void
+ */
+add_filter( 'woocommerce_show_page_title', 'wc_hide_page_title' );
+function wc_hide_page_title() {
+	if( !is_shop() ) {
+		return true;
+	}
+}
+
+/**
+ * Hide catalog ordering and result count on shopping pages
+ *
+ * @since Sushi Lovers 3.0
+ * @return void
+ */
+remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_catalog_ordering', 30 );
+remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
 
 /**
  * Recreate the default filters on the_content
@@ -547,9 +570,15 @@ if ( !function_exists( 'sushilovers_set_number_woocommerce_products' ) ) {
 	add_action( 'init', 'sushilovers_set_number_woocommerce_products' );
 }
 
+/**
+ * Check if SKU is enabled
+ *
+ * @since Sushi Lovers 1.0
+ * @return bool
+ */
 add_filter( 'wc_product_sku_enabled', 'sushilovers_wc_product_sku_enabled' );
 function sushilovers_wc_product_sku_enabled( $enabled ) {
-	if ( !is_admin() && is_product() ) {
+	if ( ! is_admin() && is_product() ) {
 		return false;
 	}
 
@@ -669,43 +698,43 @@ function childmanagewoocommercestyles() {
 add_action( 'init', 'sushilovers_custom_post_type', 0 );
 function sushilovers_custom_post_type() {
 	$labels = array(
-			'name'                  => _x( 'Portfolio', 'Post Type General Name', 'esst_projects' ),
-			'singular_name'         => _x( 'Portfolio', 'Post Type Singular Name', 'esst_projects' ),
-			'menu_name'             => __( 'Portfolio', 'esst_projects' ),
-			'name_admin_bar'        => __( 'Portfolio', 'esst_projects' ),
-			'archives'              => __( 'Artikel Archiv', 'esst_projects' ),
-			'parent_item_colon'     => __( 'Elternelement:', 'esst_projects' ),
-			'all_items'             => __( 'Alle Einträge', 'esst_projects' ),
-			'add_new_item'          => __( 'Neuen Eintrag erstellen', 'esst_projects' ),
-			'add_new'               => __( 'Eintrag erstellen', 'esst_projects' ),
-			'new_item'              => __( 'Neues Projekt', 'esst_projects' ),
-			'edit_item'             => __( 'Eintrag bearbeiten', 'esst_projects' ),
-			'update_item'           => __( 'Eintrag bearbeiten', 'esst_projects' ),
-			'view_item'             => __( 'Eintrag betrachten', 'esst_projects' ),
-			'search_items'          => __( 'Eintrag suchen', 'esst_projects' ),
-			'not_found'             => __( 'Eintrag nicht gefunden', 'esst_projects' ),
-			'not_found_in_trash'    => __( 'Eintrag nicht gefunden', 'esst_projects' ),
-			'featured_image'        => __( 'Beitragsbild', 'esst_projects' ),
-			'set_featured_image'    => __( 'Beitragsbild festlegen', 'esst_projects' ),
-			'remove_featured_image' => __( 'Beitragsbild entfernen', 'esst_projects' ),
-			'use_featured_image'    => __( 'Als Beitragsbild verwenden', 'esst_projects' ),
+		'name'                  => _x( 'Portfolio', 'Post Type General Name', 'esst_projects' ),
+		'singular_name'         => _x( 'Portfolio', 'Post Type Singular Name', 'esst_projects' ),
+		'menu_name'             => __( 'Portfolio', 'esst_projects' ),
+		'name_admin_bar'        => __( 'Portfolio', 'esst_projects' ),
+		'archives'              => __( 'Artikel Archiv', 'esst_projects' ),
+		'parent_item_colon'     => __( 'Elternelement:', 'esst_projects' ),
+		'all_items'             => __( 'Alle Einträge', 'esst_projects' ),
+		'add_new_item'          => __( 'Neuen Eintrag erstellen', 'esst_projects' ),
+		'add_new'               => __( 'Eintrag erstellen', 'esst_projects' ),
+		'new_item'              => __( 'Neues Projekt', 'esst_projects' ),
+		'edit_item'             => __( 'Eintrag bearbeiten', 'esst_projects' ),
+		'update_item'           => __( 'Eintrag bearbeiten', 'esst_projects' ),
+		'view_item'             => __( 'Eintrag betrachten', 'esst_projects' ),
+		'search_items'          => __( 'Eintrag suchen', 'esst_projects' ),
+		'not_found'             => __( 'Eintrag nicht gefunden', 'esst_projects' ),
+		'not_found_in_trash'    => __( 'Eintrag nicht gefunden', 'esst_projects' ),
+		'featured_image'        => __( 'Beitragsbild', 'esst_projects' ),
+		'set_featured_image'    => __( 'Beitragsbild festlegen', 'esst_projects' ),
+		'remove_featured_image' => __( 'Beitragsbild entfernen', 'esst_projects' ),
+		'use_featured_image'    => __( 'Als Beitragsbild verwenden', 'esst_projects' ),
 	);
 	$args = array(
-			'label'                 => __( 'Portfolio', 'sushilovers_portfolio' ),
-			'labels'                => $labels,
-			'supports'              => array( 'post-formats', 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),
-			'hierarchical'          => true,
-			'public'                => true,
-			'show_ui'               => true,
-			'show_in_menu'          => true,
-			'menu_position'         => 5,
-			'show_in_admin_bar'     => true,
-			'show_in_nav_menus'     => true,
-			'can_export'            => true,
-			'has_archive'           => true,
-			'exclude_from_search'   => false,
-			'publicly_queryable'    => true,
-			'capability_type'       => 'post',
+		'label'                 => __( 'Portfolio', 'sushilovers_portfolio' ),
+		'labels'                => $labels,
+		'supports'              => array( 'post-formats', 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),
+		'hierarchical'          => true,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'post',
 	);
 	register_post_type( 'portfolio', $args );
 }
@@ -923,12 +952,13 @@ function getWorkshopNavigation(){
 
 /**
  *   Child page conditional
+ *
  *   @ Accept's page ID, page slug or page title as parameters
  */
 function is_child( $parent = '' ) {
 	global $post;
 
-	$parent_obj = get_page( $post->post_parent, ARRAY_A );
+	$parent_obj = get_post( $post->post_parent, ARRAY_A );
 	$parent = (string) $parent;
 	$parent_array = (array) $parent;
 

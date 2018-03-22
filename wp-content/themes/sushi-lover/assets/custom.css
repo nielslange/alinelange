@@ -452,15 +452,6 @@ body,
 }
 */
 
-#blog .sidebar-blog a {
-	color: #666;
-}
-
-#blog .sidebar-blog a:hover,
-#blog .sidebar-blog a:focus {
-	color: #4d4d4d;
-}
-
 #blog .date {
 	padding: 0;
 	margin: 0;
@@ -514,6 +505,7 @@ body,
 
 #blog .sidebar-blog ul li {
 	list-style: none;
+	margin: 5px 0;
 }
 
 #single-portfolio {
