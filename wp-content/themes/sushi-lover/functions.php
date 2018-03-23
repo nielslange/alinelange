@@ -53,7 +53,7 @@ if ( !WP_DEBUG ) {
  * Eliminates the need to download the uploads directory from the remote site for testing purposes.
  * @since Sushi Lovers 3.0
  */
-if ( $_SERVER['HTTP_HOST'] == 'dev.alinelange.de' ) {
+if ( $_SERVER['HTTP_HOST'] == 'dev.alinelange.de' ||  $_SERVER['HTTP_HOST'] == 'alinelange.nielslange.com' ) {
     add_filter( 'upload_dir', function ( $uploads ) {
         $uploads['baseurl'] = 'https://alinelange.de/wp-content/uploads';
         return $uploads;
