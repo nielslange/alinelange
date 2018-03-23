@@ -14,7 +14,7 @@ if ( !class_exists('acf') ) return;
 <div id="home-facts" class="space">
     <div class="container">
 
-        <div class="sli hidden-xs">
+        <div class="slider hidden-xs">
             <div>
                 <div class="row">
                     <div class="row">

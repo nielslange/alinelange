@@ -47,6 +47,8 @@ jQuery(document).ready(function($) {
         slidesToScroll: 1,
         touchThreshold: 1000,
         fade: true,
+        centerMode: true,
+        dots: true,
         cssEase: 'linear'
     });
 });

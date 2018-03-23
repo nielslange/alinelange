@@ -1,10 +1,4 @@
-<?php if ( is_active_sidebar( 'sidebar-main' ) ) : ?>
-	<div id="sidebar-main" class="sidebar-main widget-area" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-main' ); ?>
-	</div><!-- #sidebar-main -->
-<?php endif; ?>
-
-<?php if ( is_page_template('template-parts/page-infos.php') && is_active_sidebar( 'sidebar-infos' ) ) : ?>
+<?php if ( ( is_page_template('template-parts/page-infos.php') || is_page_template('template-parts/page-infos-slider.php') ) && is_active_sidebar( 'sidebar-infos' ) ) : ?>
     <div id="sidebar-blog" class="sidebar-infos widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-infos' ); ?>
     </div><!-- #sidebar-blog -->

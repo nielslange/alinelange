@@ -522,7 +522,7 @@ body,
 }
 
 @media screen and (max-width: 767px){
-	#blog .sidebar-blog,
+	#sidebar-blog,
 	#woocommerce-sidebar {
 		margin-top: 30px;
 	}
@@ -661,7 +661,7 @@ body.page-template-page-aline .slick-list {
 }
 
 .slick-slide {
-	padding: 30px 60px;
+	padding: 30px 60px 50px;
 }
 
 .slick-prev {
@@ -678,6 +678,12 @@ body.page-template-page-aline .slick-list {
 .slick-next:before {
 	color: #4d4d4d;
 	font-family: inherit;
+}
+
+.slick-dots {
+	bottom: 0;
+	z-index: 1;
+	height: 50px;
 }
 
 .caption-style-1 {
