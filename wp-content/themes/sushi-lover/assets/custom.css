@@ -867,6 +867,17 @@ body.home .caption-style-1 .caption-text {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	margin: 0;
+}
+
+@media screen and (min-width: 1200px) {
+	.navbar-default .brand-centered .navbar-brand {
+		margin: 10px 0;
+	}
+}
+
+.navbar-default .brand-centered .navbar-brand img {
+	height: 50px;
 }
 
 .navbar-default .navbar-toggle {
@@ -1623,7 +1634,6 @@ label {
 	.woocommerce ul.products li.product .button {
 		position: relative;
 	}
-
 }
 
 .woocommerce ul.products li.product h3 {
@@ -1656,7 +1666,7 @@ label {
 @media (min-width: 992px) {
 	.woocommerce ul.products li.product {
 		position: relative;
-		height: 340px;
+		height: 380px;
 	}
 
 	.woocommerce ul.products li.product .button {

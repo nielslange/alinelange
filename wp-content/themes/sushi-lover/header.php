@@ -43,7 +43,7 @@ src="https://www.facebook.com/tr?id=1250543134977242&ev=PageView&noscript=1"
       
 		<div class="brand-centered">
 			<a class="navbar-brand" href="/">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-aline-lange.png" style="height: 51px;">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-aline-lange.png">
 			</a>
 		</div>
       
