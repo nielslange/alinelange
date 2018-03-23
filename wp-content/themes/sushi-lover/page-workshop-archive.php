@@ -15,7 +15,7 @@ if ( !class_exists('acf') ) return;
 
 <?php get_header(); ?>
 
-    <div id="workshop" class="content-area">
+    <div id="workshop" class="space content-area">
     
         <div class="container">
 

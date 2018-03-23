@@ -8,7 +8,7 @@
  * @since Sushi Lovers 1.0
  */
 ?>
-<div id="home-shop">
+<div id="home-shop" class="space">
 	<div class="container">
 		
         <div class="row visible-lg">

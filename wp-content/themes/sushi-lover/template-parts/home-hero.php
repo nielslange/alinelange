@@ -7,6 +7,8 @@
  * @subpackage Sushi Lovers
  * @since Sushi Lovers 1.0
  */
+//* Return if ACF hasn't been activated
+if ( !class_exists('acf') ) return;
 
 $logo = wp_get_attachment_image_src(get_field('home_logo'), 'large');
 
@@ -30,5 +32,5 @@ $logo = wp_get_attachment_image_src(get_field('home_logo'), 'large');
 	    	<span class="glyphicon glyphicon-chevron-right fa fa-chevron-right" aria-hidden="true"></span>
 	    </a>
 	</header>
-	<a href="#home-infos" id="more" style="z-index: 100;"><i class="fa fa-3x fa-chevron-circle-down"></i></a>
+	<a href="#home-intro" id="more" style="z-index: 100;"><i class="fa-2x fas fa-chevron-down"></i></a>
 </div>

@@ -15,7 +15,7 @@ $temp = new WP_Query($args);
 get_header();
 ?>
 
-<div id="portfolio">
+<div id="portfolio" class="space">
 	<div class="container">
 		<div class="row">
             <?php if ($temp->posts) : ?>

@@ -22,7 +22,7 @@ query_posts( wp_parse_args( $wp_query->query, array( 'posts_per_page' => -1 ))
 
 get_header(); ?>
 
-<div id="search" class="content-area service-page">
+<div id="search" class="space content-area service-page">
 	<div class="container">	
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">

@@ -43,19 +43,27 @@ src="https://www.facebook.com/tr?id=1250543134977242&ev=PageView&noscript=1"
       
 		<div class="brand-centered">
 			<a class="navbar-brand" href="/">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-aline-lange.png" style="height: 51px;">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-aline-lange.png">
 			</a>
 		</div>
       
 		<div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left visible-lg">
+                <li><a href="" title="" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="" title="" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
+                <li><a href="" title="" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
+                <li><a href="" title="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+
+            <!--
 			<?php if (function_exists('have_rows') && have_rows('social_media_items', 'option')) : ?>
 			<ul class="nav navbar-nav navbar-left visible-lg">
 				<?php while (have_rows('social_media_items', 'option')) : the_row(); ?>
-				<li><a href="<?php the_sub_field('social_media_link'); ?>" title="<?php the_sub_field('social_media_name'); ?>" target="_blank"><?php the_sub_field('social_media_icon'); ?></a></li>
-				<?php endwhile; ?>			
+                <a href="<?php the_sub_field('social_media_link'); ?>" title="<?php the_sub_field('social_media_name'); ?>" target="_blank"><?php the_sub_field('social_media_icon'); ?></a>
+				<?php endwhile; ?>
 			</ul>
 			<?php endif; ?>
-
+			-->
 
         	<?php
 		        wp_nav_menu( array(	

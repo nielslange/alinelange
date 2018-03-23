@@ -8,7 +8,7 @@
  * @since Sushi Lovers 1.0
  */
 ?>
-<div id="home-workshops">
+<div id="home-workshops" class="space">
 	<div class="container">
 		<div class="row">
 			<?php while (have_rows('home_workshops_workshop_items')) : the_row(); ?>

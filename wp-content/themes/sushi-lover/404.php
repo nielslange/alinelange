@@ -17,7 +17,7 @@
 
 get_header(); ?>
 
-	<div id="error404" class="content-area service-page">
+	<div id="error404" class="space content-area service-page">
 		<div class="container">
 
 			<div id="primary" class="content-area">

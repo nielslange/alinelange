@@ -18,7 +18,7 @@ $newborn_horizontal 	= wp_get_attachment_image_src(get_field('home_portfolio_new
 $families_horizontal 	= wp_get_attachment_image_src(get_field('home_portfolio_families_image'), 'portfolio_horizontal');
 
 ?>
-<div id="home-portfolio">
+<div id="home-portfolio" class="space">
 	<div class="container">
 		<div class="row visible-lg">
 			<div class="col-sm-4">

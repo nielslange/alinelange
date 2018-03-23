@@ -53,7 +53,7 @@ if ( !WP_DEBUG ) {
  * Eliminates the need to download the uploads directory from the remote site for testing purposes.
  * @since Sushi Lovers 3.0
  */
-if ( $_SERVER['HTTP_HOST'] == 'dev.alinelange.de' ) {
+if ( $_SERVER['HTTP_HOST'] == 'dev.alinelange.de' ||  $_SERVER['HTTP_HOST'] == 'alinelange.nielslange.com' ) {
     add_filter( 'upload_dir', function ( $uploads ) {
         $uploads['baseurl'] = 'https://alinelange.de/wp-content/uploads';
         return $uploads;
@@ -134,6 +134,10 @@ if ( !function_exists( 'sushilovers_setup' ) ) {
 
 		// Enable support for WooCommerce
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+
 
 		// Enable admin to show/hide WooCommerce breadcrumbs
 		if ( sushilovers_is_woocommerce_active() && get_field( 'woocommerce_shop_breadcrumbs', 'option') == 0 ) {
@@ -153,103 +157,103 @@ add_action( 'after_setup_theme', 'sushilovers_setup' );
  */
 function sushilovers_widgets_init() {
 	register_sidebar( array(
-			'name' => esc_html__( 'Main Sidebar', 'sushilovers' ),
-			'id' => 'sidebar-main',
-			'description' => esc_html__( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Infos Sidebar', 'sushilovers' ),
+		'id'            => 'sidebar-infos',
+		'description'   => esc_html__( 'Appears in the sidebar on the information only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Blog Sidebar', 'sushilovers' ),
-			'id' => 'sidebar-blog',
-			'description' => esc_html__( 'Appears in the sidebar on the blog and archive pages only', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Blog Sidebar', 'sushilovers' ),
+		'id'            => 'sidebar-blog',
+		'description'   => esc_html__( 'Appears in the sidebar on the blog and archive pages only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Single Post Sidebar', 'sushilovers' ),
-			'id' => 'sidebar-single',
-			'description' => esc_html__( 'Appears in the sidebar on single posts only', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Single Post Sidebar', 'sushilovers' ),
+		'id'            => 'sidebar-single',
+		'description'   => esc_html__( 'Appears in the sidebar on single posts only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Page Sidebar', 'sushilovers' ),
-			'id' => 'sidebar-page',
-			'description' => esc_html__( 'Appears in the sidebar on pages only', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Page Sidebar', 'sushilovers' ),
+		'id'            => 'sidebar-page',
+		'description'   => esc_html__( 'Appears in the sidebar on pages only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'WooCommerce Sidebar', 'sushilovers' ),
-			'id' => 'woocommerce-sidebar',
-			'description' => esc_html__( 'Appears in the sidebar on product pages only', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'WooCommerce Sidebar', 'sushilovers' ),
+		'id'            => 'woocommerce-sidebar',
+		'description'   => esc_html__( 'Appears in the sidebar on product pages only', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'First Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-1',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '',
-			'after_widget' => '',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'First Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-1',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Second Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-2',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Second Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-2',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Third Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-3',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Third Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-3',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Fourth Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-4',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '',
-			'after_widget' => '',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Fourth Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-4',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
 	) );
 
 	register_sidebar( array(
-			'name' => esc_html__( 'Fifth Footer Widget Area', 'sushilovers' ),
-			'id' => 'sidebar-footer-5',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
-			'before_widget' => '',
-			'after_widget' => '',
-			'before_title' => '<h3 class="widget-title h5">',
-			'after_title' => '</h3>'
+		'name'          => esc_html__( 'Fifth Footer Widget Area', 'sushilovers' ),
+		'id'            => 'sidebar-footer-5',
+		'description'   => esc_html__( 'Appears in the footer sidebar', 'sushilovers' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3 class="widget-title h5">',
+		'after_title'   => '</h3>'
 	) );
 }
 add_action( 'widgets_init', 'sushilovers_widgets_init' );
@@ -329,9 +333,9 @@ if ( !function_exists( 'sushilovers_entry_meta' ) ) {
 			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'sushilovers' ) );
 			if ( $categories_list ) {
 				printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-						_x( 'Categories', 'Used before category names.', 'sushilovers' ),
-						$categories_list
-						);
+					_x( 'Categories', 'Used before category names.', 'sushilovers' ),
+					$categories_list
+				);
 			}
 
 			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'sushilovers' ) );
@@ -378,6 +382,29 @@ function is_blog() {
 
 	return ( is_home() || is_archive() || is_single() ) && ($post_type == 'post');
 }
+
+/**
+ * Hide site title on shopping pages
+ *
+ * @since Sushi Lovers 3.0
+ * @link https://docs.woocommerce.com/wc-apidocs/function-is_shop.html
+ * @return void
+ */
+add_filter( 'woocommerce_show_page_title', 'wc_hide_page_title' );
+function wc_hide_page_title() {
+	if( !is_shop() ) {
+		return true;
+	}
+}
+
+/**
+ * Hide catalog ordering and result count on shopping pages
+ *
+ * @since Sushi Lovers 3.0
+ * @return void
+ */
+remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_catalog_ordering', 30 );
+remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
 
 /**
  * Recreate the default filters on the_content
@@ -547,9 +574,15 @@ if ( !function_exists( 'sushilovers_set_number_woocommerce_products' ) ) {
 	add_action( 'init', 'sushilovers_set_number_woocommerce_products' );
 }
 
+/**
+ * Check if SKU is enabled
+ *
+ * @since Sushi Lovers 1.0
+ * @return bool
+ */
 add_filter( 'wc_product_sku_enabled', 'sushilovers_wc_product_sku_enabled' );
 function sushilovers_wc_product_sku_enabled( $enabled ) {
-	if ( !is_admin() && is_product() ) {
+	if ( ! is_admin() && is_product() ) {
 		return false;
 	}
 
@@ -586,10 +619,13 @@ function sushilovers_load_styles() {
 	wp_enqueue_style( 'lato', 'https://fonts.googleapis.com/css?family=Lato:400,300' );
 	wp_enqueue_style( 'nothing-you-could-do', 'https://fonts.googleapis.com/css?family=Nothing+You+Could+Do' );
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css' );
-	wp_enqueue_style( 'bootstrap-select', get_stylesheet_directory_uri() . '/css/bootstrap-select.min.css' );
+	wp_enqueue_style( 'bootstrap-select', get_stylesheet_directory_uri() . '/css/bootstrap.select.min.css' );
 	wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'flexslider', get_stylesheet_directory_uri() . '/css/flexslider.css' );
-	wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/css/custom.min.css' );
+	wp_enqueue_style( 'slick', get_stylesheet_directory_uri() . '/assets/slick/slick.css' );
+	wp_enqueue_style( 'slick-theme', get_stylesheet_directory_uri() . '/assets/slick/slick-theme.css' );
+	wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/css/custom.min.css', null, time() );
+	#wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/assets/custom.css' );
 	wp_enqueue_style( 'viewport-bug-workaround', get_stylesheet_directory_uri() . '/css/ie10-viewport-bug-workaround.css' );
 }
 
@@ -605,9 +641,13 @@ function sushilovers_load_scripts() {
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.11.3', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.5', true );
 	wp_enqueue_script( 'bootstrap-select', get_template_directory_uri() . '/js/bootstrap-select.min.js', array(), '1.10.0', true );
-	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '2.6.0', true );
-	wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), '1.5.3', true );
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.min.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '2.6.0', true );
+    wp_enqueue_script( 'fontawesome', get_template_directory_uri() . '/assets/fontawesome/js/fontawesome-all.min.js', array(), '5.0.8', true );
+    wp_enqueue_script( 'fontawesome', get_template_directory_uri() . '/assets/fontawesome/js/fa-v4-shims.min.js', array(), '5.0.8', true );
+    wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), '1.5.3', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick/slick.min.js', array(), '1.8.1', true );
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/custom.js', array(), '1.0.0', true );
+	#wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'viewport-bug-workaround', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array(), '1.0.0', true );
 }
 
@@ -662,43 +702,43 @@ function childmanagewoocommercestyles() {
 add_action( 'init', 'sushilovers_custom_post_type', 0 );
 function sushilovers_custom_post_type() {
 	$labels = array(
-			'name'                  => _x( 'Portfolio', 'Post Type General Name', 'esst_projects' ),
-			'singular_name'         => _x( 'Portfolio', 'Post Type Singular Name', 'esst_projects' ),
-			'menu_name'             => __( 'Portfolio', 'esst_projects' ),
-			'name_admin_bar'        => __( 'Portfolio', 'esst_projects' ),
-			'archives'              => __( 'Artikel Archiv', 'esst_projects' ),
-			'parent_item_colon'     => __( 'Elternelement:', 'esst_projects' ),
-			'all_items'             => __( 'Alle Einträge', 'esst_projects' ),
-			'add_new_item'          => __( 'Neuen Eintrag erstellen', 'esst_projects' ),
-			'add_new'               => __( 'Eintrag erstellen', 'esst_projects' ),
-			'new_item'              => __( 'Neues Projekt', 'esst_projects' ),
-			'edit_item'             => __( 'Eintrag bearbeiten', 'esst_projects' ),
-			'update_item'           => __( 'Eintrag bearbeiten', 'esst_projects' ),
-			'view_item'             => __( 'Eintrag betrachten', 'esst_projects' ),
-			'search_items'          => __( 'Eintrag suchen', 'esst_projects' ),
-			'not_found'             => __( 'Eintrag nicht gefunden', 'esst_projects' ),
-			'not_found_in_trash'    => __( 'Eintrag nicht gefunden', 'esst_projects' ),
-			'featured_image'        => __( 'Beitragsbild', 'esst_projects' ),
-			'set_featured_image'    => __( 'Beitragsbild festlegen', 'esst_projects' ),
-			'remove_featured_image' => __( 'Beitragsbild entfernen', 'esst_projects' ),
-			'use_featured_image'    => __( 'Als Beitragsbild verwenden', 'esst_projects' ),
+		'name'                  => _x( 'Portfolio', 'Post Type General Name', 'esst_projects' ),
+		'singular_name'         => _x( 'Portfolio', 'Post Type Singular Name', 'esst_projects' ),
+		'menu_name'             => __( 'Portfolio', 'esst_projects' ),
+		'name_admin_bar'        => __( 'Portfolio', 'esst_projects' ),
+		'archives'              => __( 'Artikel Archiv', 'esst_projects' ),
+		'parent_item_colon'     => __( 'Elternelement:', 'esst_projects' ),
+		'all_items'             => __( 'Alle Einträge', 'esst_projects' ),
+		'add_new_item'          => __( 'Neuen Eintrag erstellen', 'esst_projects' ),
+		'add_new'               => __( 'Eintrag erstellen', 'esst_projects' ),
+		'new_item'              => __( 'Neues Projekt', 'esst_projects' ),
+		'edit_item'             => __( 'Eintrag bearbeiten', 'esst_projects' ),
+		'update_item'           => __( 'Eintrag bearbeiten', 'esst_projects' ),
+		'view_item'             => __( 'Eintrag betrachten', 'esst_projects' ),
+		'search_items'          => __( 'Eintrag suchen', 'esst_projects' ),
+		'not_found'             => __( 'Eintrag nicht gefunden', 'esst_projects' ),
+		'not_found_in_trash'    => __( 'Eintrag nicht gefunden', 'esst_projects' ),
+		'featured_image'        => __( 'Beitragsbild', 'esst_projects' ),
+		'set_featured_image'    => __( 'Beitragsbild festlegen', 'esst_projects' ),
+		'remove_featured_image' => __( 'Beitragsbild entfernen', 'esst_projects' ),
+		'use_featured_image'    => __( 'Als Beitragsbild verwenden', 'esst_projects' ),
 	);
 	$args = array(
-			'label'                 => __( 'Portfolio', 'sushilovers_portfolio' ),
-			'labels'                => $labels,
-			'supports'              => array( 'post-formats', 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),
-			'hierarchical'          => true,
-			'public'                => true,
-			'show_ui'               => true,
-			'show_in_menu'          => true,
-			'menu_position'         => 5,
-			'show_in_admin_bar'     => true,
-			'show_in_nav_menus'     => true,
-			'can_export'            => true,
-			'has_archive'           => true,
-			'exclude_from_search'   => false,
-			'publicly_queryable'    => true,
-			'capability_type'       => 'post',
+		'label'                 => __( 'Portfolio', 'sushilovers_portfolio' ),
+		'labels'                => $labels,
+		'supports'              => array( 'post-formats', 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'revisions' ),
+		'hierarchical'          => true,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'post',
 	);
 	register_post_type( 'portfolio', $args );
 }
@@ -916,12 +956,13 @@ function getWorkshopNavigation(){
 
 /**
  *   Child page conditional
+ *
  *   @ Accept's page ID, page slug or page title as parameters
  */
 function is_child( $parent = '' ) {
 	global $post;
 
-	$parent_obj = get_page( $post->post_parent, ARRAY_A );
+	$parent_obj = get_post( $post->post_parent, ARRAY_A );
 	$parent = (string) $parent;
 	$parent_array = (array) $parent;
 

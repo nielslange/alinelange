@@ -12,7 +12,7 @@ $image = wp_get_attachment_image_src(get_field('home_infos_image'), 'medium');
 
 ?>
 
-<div id="home-infos">
+<div id="home-infos" class="space">
 	<div class="container">
 		<div class="row hidden-xs">
 			<div class="col-xs-4">

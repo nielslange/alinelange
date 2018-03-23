@@ -18,7 +18,7 @@ function nl_landing_page_scripts() {
 
 get_header(); ?>
 
-	<div id="index" class="content-area">
+	<div id="index" class="space content-area">
 		<div class="container">
 
 		<?php

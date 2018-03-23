@@ -17,7 +17,7 @@
 
 get_header(); ?>
 
-<div id="blog">
+<div id="blog" class="space">
 	<div class="container">
         <?php if ( have_posts() ) : ?>
         	<?php while ( have_posts() ) : the_post(); ?>
@@ -37,8 +37,8 @@ get_header(); ?>
                         <?php 
 						// Previous/next post navigation.
 		                the_post_navigation( array(
-		                    'prev_text' => '<span class="meta-nav" aria-hidden="true"><i class="fa fa-fw fa-chevron-left"></i> ' . __( 'Vorheriger Eintrag', 'berlin' ) . '</span> ',
-		                    'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Nächster Eintrag', 'berlin' ) . ' <i class="fa fa-fw fa-chevron-right"></i></span> ',
+		                    'prev_text' => '<span class="meta-nav" aria-hidden="true"><i class="far fa-fw fa-chevron-left"></i> ' . __( 'Vorheriger Eintrag', 'berlin' ) . '</span> ',
+		                    'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Nächster Eintrag', 'berlin' ) . ' <i class="far fa-fw fa-chevron-right"></i></span> ',
 		                    'screen_reader_text' => ' ',
 		                ) );
 
