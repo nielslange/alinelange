@@ -11,21 +11,14 @@
 	<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.ico" type="image/x-icon">
     <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
     <?php wp_head(); ?>
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1250543134977242');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1250543134977242&ev=PageView&noscript=1"
-/></noscript>
-<!-- DO NOT MODIFY -->
-<!-- End Facebook Pixel Code -->
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){ n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1250543134977242');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1250543134977242&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 <body <?php body_class(); ?>>
 
@@ -49,21 +42,11 @@ src="https://www.facebook.com/tr?id=1250543134977242&ev=PageView&noscript=1"
       
 		<div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left visible-lg">
-                <li><a href="" title="" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                <li><a href="" title="" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
-                <li><a href="" title="" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
-                <li><a href="" title="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.facebook.com/alinelangeFOTOGRAFIE/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="https://pinterest.com/alinelange/" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
+                <li><a href="https://plus.google.com/112133270589428047534/posts/" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
+                <li><a href="https://www.instagram.com/fotoaline/" target="_blank"><i class="fab fa-instagram"></i></a></li>
             </ul>
-
-            <!--
-			<?php if (function_exists('have_rows') && have_rows('social_media_items', 'option')) : ?>
-			<ul class="nav navbar-nav navbar-left visible-lg">
-				<?php while (have_rows('social_media_items', 'option')) : the_row(); ?>
-                <a href="<?php the_sub_field('social_media_link'); ?>" title="<?php the_sub_field('social_media_name'); ?>" target="_blank"><?php the_sub_field('social_media_icon'); ?></a>
-				<?php endwhile; ?>
-			</ul>
-			<?php endif; ?>
-			-->
 
         	<?php
 		        wp_nav_menu( array(	

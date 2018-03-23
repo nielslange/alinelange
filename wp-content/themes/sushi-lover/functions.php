@@ -133,7 +133,16 @@ if ( !function_exists( 'sushilovers_setup' ) ) {
 		) );
 
 		// Enable support for WooCommerce
-		add_theme_support( 'woocommerce' );
+		add_theme_support( 'woocommerce', array(
+			'product_grid'          => array(
+				'default_rows'    => 3,
+				'min_rows'        => 2,
+				'max_rows'        => 8,
+				'default_columns' => 4,
+				'min_columns'     => 2,
+				'max_columns'     => 5,
+			),
+		) );
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
@@ -555,26 +564,6 @@ if ( !function_exists( 'sushilovers_remove_woocommerce_breadcrumbs' ) ) {
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
 /**
- * Set the number of products to display on the WooCommerce shop page
- *
- * @since Sushi Lovers 1.0
- * @link https://codex.wordpress.org/Function_Reference/get_option
- * @link https://codex.wordpress.org/Function_Reference/sanitize_text_field
- * @link https://codex.wordpress.org/Function_Reference/add_filter
- * @link https://codex.wordpress.org/Function_Reference/add_action
- * @return void
- */
-if ( !function_exists( 'sushilovers_set_number_woocommerce_products' ) ) {
-	function sushilovers_set_number_woocommerce_products() {
-		if ( function_exists('get_field') && get_field( 'woocommerce_shop_products', 'option' ) ) {
-			$numprods = "return " . sanitize_text_field( get_field( 'woocommerce_shop_products', 'option' ) ) . ";";
-			add_filter( 'loop_shop_per_page', create_function( '$cols', $numprods ), 20 );
-		}
-	}
-	add_action( 'init', 'sushilovers_set_number_woocommerce_products' );
-}
-
-/**
  * Check if SKU is enabled
  *
  * @since Sushi Lovers 1.0
@@ -587,23 +576,6 @@ function sushilovers_wc_product_sku_enabled( $enabled ) {
 	}
 
 	return $enabled;
-}
-
-/**
- * Set up theme settings option page
- *
- * @since Sushi Lovers 1.0
- * @link https://codex.wordpress.org/Function_Reference/get_stylesheet_directory
- * @return void
- */
-if ( sushilovers_is_woocommerce_active() ) {
-	if ( function_exists('acf_add_options_page') ) {
-		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Settings',
-			'menu_title'	=> 'Settings',
-			'parent_slug'	=> 'themes.php',
-		));
-	}
 }
 
 /**
