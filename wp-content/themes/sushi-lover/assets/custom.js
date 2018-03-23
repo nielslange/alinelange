@@ -38,9 +38,9 @@ jQuery(document).ready(function($) {
     $(".archive .woocommerce-result-count").detach().prependTo("#shop .container");
     $(".archive .page-title").detach().prependTo("#shop .container");
 
-    $('.your-class').slick({
+    $('.slider').slick({
         draggable: true,
-        autoplay: true, /* this is the new line */
+        autoplay: false,
         autoplaySpeed: 5000,
         infinite: true,
         slidesToShow: 1,
