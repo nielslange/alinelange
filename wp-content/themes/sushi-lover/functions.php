@@ -134,6 +134,10 @@ if ( !function_exists( 'sushilovers_setup' ) ) {
 
 		// Enable support for WooCommerce
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+
 
 		// Enable admin to show/hide WooCommerce breadcrumbs
 		if ( sushilovers_is_woocommerce_active() && get_field( 'woocommerce_shop_breadcrumbs', 'option') == 0 ) {
@@ -152,16 +156,6 @@ add_action( 'after_setup_theme', 'sushilovers_setup' );
  * @return void
  */
 function sushilovers_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Main Sidebar', 'sushilovers' ),
-		'id'            => 'sidebar-main',
-		'description'   => esc_html__( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'sushilovers' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>'
-	) );
-
 	register_sidebar( array(
 		'name'          => esc_html__( 'Infos Sidebar', 'sushilovers' ),
 		'id'            => 'sidebar-infos',
