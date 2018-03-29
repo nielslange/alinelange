@@ -27,6 +27,9 @@
  * In paths you can add <<glob or array of globs>>. Edit the variables as per your project requirements.
  */
 
+// process.env.DISABLE_NOTIFIER = true;
+
+
 // START Editing Project Variables.
 // Project related.
 var project                 = 'sushi-lover'; // Project Name.
@@ -64,7 +67,7 @@ var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Sour
 var imagesDestination       = './assets/img/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 // Watch files paths.
-var styleWatchFiles         = './**/*.css'; // Path to all CSS files.
+var styleWatchFiles         = './assets/*.css'; // Path to all CSS files.
 // var styleWatchFiles         = './assets/*.scss'; // Path to all *.scss files inside css folder and inside them.
 var vendorJSWatchFiles      = './assets/js/vendor/*.js'; // Path to all vendor JS files.
 var customJSWatchFiles      = './assets/js/custom/*.js'; // Path to all custom JS files.

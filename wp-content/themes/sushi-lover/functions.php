@@ -619,6 +619,7 @@ function sushilovers_load_scripts() {
     wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), '1.5.3', true );
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick/slick.min.js', array(), '1.8.1', true );
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/custom.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'custom-new', get_template_directory_uri() . '/assets/js/custom/custom.js', array(), '1.0.0', true );
 	#wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'viewport-bug-workaround', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array(), '1.0.0', true );
 }
@@ -818,11 +819,24 @@ function smntcs_woocommerce_email_headers($headers, $object) {
 }
 
 /**
- * Add category taxomony to post type page
+ * Add category taxonomy to post type page
  */
 add_action( 'init', 'smntcs_add_taxonomies_to_pages' );
 function smntcs_add_taxonomies_to_pages() {
 	register_taxonomy_for_object_type( 'category', 'page' );
+}
+
+/**
+ * Add additional body classes
+ */
+add_filter( 'body_class', 'smntcs_add_body_class' );
+function smntcs_add_body_class( $classes ) {
+	if( is_page_template('page-contact.php') ) {
+		$classes[] = 'contact';
+
+	}
+
+	return $classes;
 }
 
 /**

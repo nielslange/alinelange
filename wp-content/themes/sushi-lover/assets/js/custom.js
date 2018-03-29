@@ -6,4 +6,7 @@
  * @since 1.0.0
  */
 console.log( 'CustomJS' );
-s
+
+window.FontAwesomeConfig = {
+    searchPseudoElements: true
+}

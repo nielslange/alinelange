@@ -3,7 +3,9 @@
   "author": "nielslange",
   "version": "1.0.0",
   "license": "GPL-2.0",
-  "dependencies": {},
+  "dependencies": {
+    "notify-send": "^0.1.2"
+  },
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.1",

@@ -418,6 +418,61 @@ body,
 	transform: scale(1.1);
 }
 
+body.contact #hero {
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #777;
+}
+
+@media screen and (min-width: 767px) {
+	body.contact #hero {
+		height: calc(100%);
+	}
+}
+
+body.contact #hero h3 {
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+body.contact #hero h3:first-of-type {
+	margin-top: 0;
+}
+
+body.contact #hero a {
+	text-decoration: none;
+}
+
+body.contact #hero a.social-link {
+	color: #999;
+}
+
+body.contact #hero a.social-link:hover {
+	color: #54b2b1;
+}
+
+body.contact #hero a.social-link:before {
+	font-family: "fontawesome";
+	font-size: 20px;
+	padding-right: 2px;
+}
+
+body.contact #hero a.social-link[href*="facebook"]:before {
+	content: "\f082";
+}
+
+body.contact #hero a.social-link[href*="instagram"]:before {
+	content: "\f16d";
+}
+
+body.contact #hero a.social-link[href*="pinterest"]:before {
+	content: "\f0d3";
+}
+
+body.contact #hero a.social-link[href*="plus.google"]:before {
+	content: "\f0d4";
+}
+
 #blog .row {
 	padding-top: 0;
 }

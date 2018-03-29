@@ -51,4 +51,5 @@ jQuery(document).ready(function($) {
         dots: true,
         cssEase: 'linear'
     });
+
 });
