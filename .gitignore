@@ -30,3 +30,5 @@ wp-content/plugins/*
 wp-content/themes/*
 wp-content/themes/sushi-lover/node_modules/*
 !wp-content/themes/sushi-lover/
+/wp-content/themes/sushi-lover/error_log
+/wp-content/themes/sushi-lover/assets/slick
