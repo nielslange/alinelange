@@ -35,12 +35,10 @@
 				<div class="col-sm-12">
 					<p>
 						&copy; <?php echo date('Y'); ?> aline lange FOTOGRAFIE |
-
-                        <?php if (is_page_template('landing-page.php')) : ?>
-                          <a href="/impressum">Impressum</a> | 
-                        <?php endif; ?>
-
-						Entwickelt mit <abbr title="December 19, 2015 &bull; Bali, Indonesia"><i class="fas fa-heart"></i></abbr> durch <strong><a href="https://nielslange.com/" target="_blank" title="Niels Lage - WordPress Developer">Niels Lange</a></strong>
+                        <a href="/impressum">Impressum</a> |
+                        <a href="/datenschutzerklaerung">Datenschutz</a> |
+                        <a href="/mein-konto">Mein Konto</a> |
+                        Entwickelt mit <abbr title="December 19, 2015 &bull; Bali, Indonesia"><i class="fas fa-heart"></i></abbr> durch <strong><a href="https://nielslange.com/" target="_blank" title="Niels Lange - WordPress Developer">Niels Lange</a></strong>
 					</p>
 				</div>
 			</div>
