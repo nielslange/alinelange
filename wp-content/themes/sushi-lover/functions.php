@@ -53,7 +53,8 @@ if ( !WP_DEBUG ) {
  * Eliminates the need to download the uploads directory from the remote site for testing purposes.
  * @since Sushi Lovers 3.0
  */
-if ( $_SERVER['HTTP_HOST'] == 'dev.alinelange.de' ||  $_SERVER['HTTP_HOST'] == 'alinelange.nielslange.com' ) {
+if ( $_SERVER['HTTP_HOST'] == 'dev.alinelange.de' ||
+	 $_SERVER['HTTP_HOST'] == 'dev.alinelange-test.de' ) {
     add_filter( 'upload_dir', function ( $uploads ) {
         $uploads['baseurl'] = 'https://alinelange.de/wp-content/uploads';
         return $uploads;
@@ -125,7 +126,7 @@ if ( !function_exists( 'sushilovers_setup' ) ) {
 	    update_option( 'image_default_align', 'none' );
 	    update_option( 'image_default_link_type', 'none' );
 	    update_option( 'image_default_size', 'large' );
-		
+
 		// This theme uses wp_nav_menu() in one location
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', 'sushilovers' ),
@@ -737,7 +738,7 @@ add_filter( 'wc_product_enable_dimensions_display', '__return_false' );
 add_action( 'woocommerce_before_cart_table', 'sushilovers_woocommerce_before_cart_table', 9 );
 function sushilovers_woocommerce_before_cart_table() {
 	global $woocommerce;
-	
+
 	if ( sushilovers_cart_has_physical_products() ) {
 		if ( $woocommerce->cart->subtotal < 10 && !sushilovers_cart_has_gift()) {
 			wc_print_notice( __( 'Ab einem Bestellwert von 10,00 &euro; erhälst Du ein kleines Dankeschön von mir! <a href="/shop">Weiter einkaufen</a>', 'woocommerce' ), 'notice' );
@@ -757,14 +758,14 @@ function sushilovers_woocommerce_before_cart_table() {
 }
 
 /**
- * Check if cart has any physical products 
+ * Check if cart has any physical products
  */
 function sushilovers_cart_has_physical_products() {
 	global $woocommerce;
 
 	$physical_products = 0;
 	$products 		   = $woocommerce->cart->get_cart();
-	 
+
 	foreach ($products as $product) {
 		$product_id  = $product['product_id'];
 		$is_virtual  = get_post_meta($product_id, '_virtual', true);
@@ -786,7 +787,7 @@ function sushilovers_cart_has_gift() {
 	foreach ($woocommerce->cart->get_cart() as $product) {
 		$product_id  	= $product['product_id'];
 		$product_cats	= get_the_terms($product_id, 'product_cat');
-		
+
 		foreach ($product_cats as $category) {
 			if ( $category->slug == 'geschenk' ) return $product_id;
 		}
@@ -796,7 +797,7 @@ function sushilovers_cart_has_gift() {
 }
 
 /**
- * Hide WooCommerce category gift 
+ * Hide WooCommerce category gift
  */
 add_filter( 'woocommerce_product_categories_widget_args', 'sushilovers_hide_category_gift' );
 function sushilovers_hide_category_gift( $cat_args ) {
@@ -844,12 +845,12 @@ function smntcs_add_body_class( $classes ) {
  */
 function get_breadcrumb() {
 	echo '<a href="' . home_url() . '" rel="nofollow">Home</a>';
-	
+
 	if (in_array('page-template-page-mentoring-detail',get_body_class())) {
 		echo "&nbsp; &#187; &nbsp;";
 		echo '<a href="/mentoring-programm" rel="nofollow">Mentoring-Programm „HappyHealthyBusiness”</a>';
 	}
-	
+
 	global $post;
 	$parents = get_post_ancestors($post);
 	$parents = array_reverse($parents);
@@ -883,7 +884,7 @@ function wpc_auto_redirect_after_logout(){
 
 /***
  * Exclude widget categories
- * 
+ *
  * Online Workshop --> ID: 967
  * Online Workshop Bonus --> ID: 1081
  */
@@ -896,8 +897,8 @@ function nl_exclude_widget_categories($args){
 
 function getWorkshopNavigation(){
 	// Return if WooCommerce Memberships hasn't been activated
-	if ( !function_exists('wc_memberships_is_user_active_member') ) return; 
-		
+	if ( !function_exists('wc_memberships_is_user_active_member') ) return;
+
 	$pagelist 	= get_pages('sort_column=menu_order&sort_order=asc');
 	$pages 		= array();
 	foreach ($pagelist as $page) {
@@ -922,7 +923,7 @@ function getWorkshopNavigation(){
 		echo'">' . get_the_title($prev_id) . '</a>';
 		echo "</div>";
 	}
-	
+
 	if ( !empty($next_id) && !is_page('affiliate-programm') ) {
 		if ( $with_bonus || ($no_bonus && !is_page('bonus')) || ($no_bonus && !has_category('online-workshop-bonus', get_post($next_id))) ) {
 			echo '<div class="col-sm-6 text-right">';
@@ -935,7 +936,7 @@ function getWorkshopNavigation(){
 			echo "</div>";
 		}
 	}
-	
+
 	echo '<div class="clearfix"></div>';
 	echo '</div>';
 }
