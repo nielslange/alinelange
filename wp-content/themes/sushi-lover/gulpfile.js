@@ -46,8 +46,8 @@ var lastTranslator          = 'Niels Lange <info@nielslane.de>'; // Last transla
 var team                    = 'Niels Lange <info@nielslane.de>'; // Team's Email ID.
 
 // Style related.
-var styleSRC                = './assets/custom.css'; // Path to main .scss file.
-var styleDestination        = './css/'; // Path to place the compiled CSS file.
+var styleSRC                = './assets/css/custom.scss'; // Path to main .scss file.
+var styleDestination        = './assets/'; // Path to place the compiled CSS file.
 // Default set to root folder.
 
 // JS Vendor related.
@@ -67,15 +67,15 @@ var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Sour
 var imagesDestination       = './assets/img/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 // Watch files paths.
-var styleWatchFiles         = './assets/*.css'; // Path to all CSS files.
-// var styleWatchFiles         = './assets/*.scss'; // Path to all *.scss files inside css folder and inside them.
+//var styleWatchFiles         = './assets/*.css'; // Path to all CSS files.
+var styleWatchFiles         = './assets/css/*.scss'; // Path to all *.scss files inside css folder and inside them.
 var vendorJSWatchFiles      = './assets/js/vendor/*.js'; // Path to all vendor JS files.
 var customJSWatchFiles      = './assets/js/custom/*.js'; // Path to all custom JS files.
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
 
 // Browsers you care about for autoprefixing.
-// Browserlist https        ://github.com/ai/browserslist
+// Browserlist https://github.com/ai/browserslist
 const AUTOPREFIXER_BROWSERS = [
     'last 2 version',
     '> 1%',
@@ -113,10 +113,10 @@ var uglify       = require('gulp-uglify'); // Minifies JS files
 var imagemin     = require('gulp-imagemin'); // Minify PNG, JPEG, GIF and SVG images with imagemin.
 
 // Utility related plugins.
-var rename       = require('gulp-rename'); // Renames files E.g. style.css -> style.min.css
+var rename       = require('gulp-rename'); // Renames files e.g. custom.scss -> custom.min.css
 var lineec       = require('gulp-line-ending-corrector'); // Consistent Line Endings for non UNIX systems. Gulp Plugin for Line Ending Corrector (A utility that makes sure your files have consistent line endings)
 var filter       = require('gulp-filter'); // Enables you to work on a subset of the original files by filtering them using globbing.
-var sourcemaps   = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
+var sourcemaps   = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. custom.scss) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate custom.css)
 var notify       = require('gulp-notify'); // Sends message notification to you
 var browserSync  = require('browser-sync').create(); // Reloads browser and injects CSS. Time-saving synchronised browser testing.
 var reload       = browserSync.reload; // For manual browser reload.
@@ -167,9 +167,9 @@ gulp.task( 'browser-sync', function() {
  *    1. Gets the source scss file
  *    2. Compiles Sass to CSS
  *    3. Writes Sourcemaps for it
- *    4. Autoprefixes it and generates style.css
+ *    4. Autoprefixes it and generates custom.css
  *    5. Renames the CSS file with suffix .min.css
- *    6. Minifies the CSS file and generates style.min.css
+ *    6. Minifies the CSS file and generates custom.min.css
  *    7. Injects CSS or reloads the browser via browserSync
  */
 gulp.task('styles', function () {
@@ -195,11 +195,11 @@ gulp.task('styles', function () {
         .pipe( filter( '**/*.css' ) ) // Filtering stream to only css files
         .pipe( mmq( { log: true } ) ) // Merge Media Queries only for .min.css version.
 
-        .pipe( browserSync.stream() ) // Reloads style.css if that is enqueued.
+        .pipe( browserSync.stream() ) // Reloads custom.scss if that is enqueued.
 
         .pipe( rename( { suffix: '.min' } ) )
         .pipe( minifycss( {
-            maxLineLen: 0
+            maxLineLen: 10
         }))
         .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
         .pipe( gulp.dest( styleDestination ) )
