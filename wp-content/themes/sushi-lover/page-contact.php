@@ -30,8 +30,9 @@ get_header();
 
                     //* STAY CONNECTED
                     printf('<h3>%s</h3>', get_field('contact_connected_title'));
-                    printf('<p><i class="fas fa-envelope fa-fw"></i> <a href="mailto:%1$s">%1$s</a><br>', get_field('contact_connected_email'));
-                    printf('<i class="fas fa-phone fa-fw"></i> <a href="tel:%1$s">%1$s</a></p>', get_field('contact_connected_phone'));
+                    printf('<p>Mail an: <a href="mailto:%1$s">%1$s</a></br>', get_field('contact_connected_email'));
+                    printf('Call me: <a href="tel:%1$s">%1$s</a></p>', get_field('contact_connected_phone'));
+                    printf('<p><a href="#" data-toggle="modal" data-target=".newsletter-popup">%s</a></p>', get_field('contact_connected_newsletter_cta'));
 
                     //* SOCIAL MEDIA
                     printf('<h3>%s</h3>', get_field('contact_social_title'));
@@ -50,7 +51,6 @@ get_header();
         </div>
     </div>
 
-
     <div id="infos" class="space">
         <div class="container">
             <div class="row">
@@ -61,25 +61,20 @@ get_header();
         </div>
     </div>
 
-    <!--
-    <div id="infos" class="space">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-9">
-					<?php if ( have_posts() ) : ?>
-	                    <?php while ( have_posts() ) : the_post(); ?>
-                            <h1><?php the_title(); ?></h1>
-                            <?php the_content(); ?>
-		                <?php endwhile; ?>
-					<?php endif; ?>
-                    <div class="clearfix"></div>
+    <?php if ( get_field('contact_connected_newsletter_title') && get_field('contact_connected_newsletter_form') ) : ?>
+    <div class="modal fade newsletter-popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><?php the_field('contact_connected_newsletter_title'); ?></h4>
                 </div>
-                <div class="col-sm-3">
-					<?php get_sidebar(); ?>
+                <div class="modal-body">
+                    <?php the_field('contact_connected_newsletter_form'); ?>
                 </div>
             </div>
         </div>
     </div>
-    -->
+    <?php endif; ?>
 
 <?php get_footer(); ?>
