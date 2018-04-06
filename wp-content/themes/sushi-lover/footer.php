@@ -36,7 +36,7 @@
 					<p>
 						&copy; <?php echo date('Y'); ?> aline lange FOTOGRAFIE |
                         <a href="/impressum">Impressum</a> |
-                        <a href="/datenschutzerklaerung">Datenschutz</a> |
+                        <a href="/datenschutz">Datenschutz</a> |
                         <a href="/mein-konto">Mein Konto</a> |
                         Entwickelt mit <abbr title="December 19, 2015 &bull; Bali, Indonesia"><i class="fas fa-heart"></i></abbr> durch <strong><a href="https://nielslange.com/" target="_blank" title="Niels Lange - WordPress Developer">Niels Lange</a></strong>
 					</p>
