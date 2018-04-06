@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+#login h1 a,
+.login h1 a {
+    background-image: url(/wp-content/themes/sushi-lover/images/logo-aline-lange_original.png);
+    background-size: 250px auto;
+    background-repeat: no-repeat;
+    height: 81px;
+    width: 320px;
+}
