@@ -45,7 +45,7 @@
                 <li><a href="https://www.facebook.com/alinelangeFOTOGRAFIE/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
                 <li><a href="https://pinterest.com/alinelange/" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
                 <li><a href="https://plus.google.com/112133270589428047534/posts/" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
-                <li><a href="https://www.instagram.com/fotoaline/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.instagram.com/alinelangefotografie/" target="_blank"><i class="fab fa-instagram"></i></a></li>
             </ul>
 
         	<?php
