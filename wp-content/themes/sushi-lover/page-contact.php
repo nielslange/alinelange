@@ -70,7 +70,7 @@ get_header();
                     <h4 class="modal-title" id="myModalLabel"><?php the_field('contact_connected_newsletter_title'); ?></h4>
                 </div>
                 <div class="modal-body">
-                    <?php the_field('contact_connected_newsletter_form'); ?>
+	                <?php echo do_shortcode(get_field('contact_connected_newsletter_form')); ?>
                 </div>
             </div>
         </div>
