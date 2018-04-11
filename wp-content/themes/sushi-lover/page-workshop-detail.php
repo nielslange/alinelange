@@ -22,7 +22,8 @@
 			<?php if ( wc_memberships_is_user_active_member(get_current_user_id(), 'workshop') ||
 					   wc_memberships_is_user_active_member(get_current_user_id(), 'workshop-manual') ||
 					   wc_memberships_is_user_active_member(get_current_user_id(), 'workshop-automatic') ||
-					   wc_memberships_is_user_active_member(get_current_user_id(), 'workshop-automatic-no-bonus')) : ?>
+			           wc_memberships_is_user_active_member(get_current_user_id(), 'workshop-automatic-2018') ||
+			           wc_memberships_is_user_active_member(get_current_user_id(), 'workshop-automatic-no-bonus')) : ?>
 
                 <?php if ( have_posts() ) : ?>
                 
