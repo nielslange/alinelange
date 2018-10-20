@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Template to display the facts section on the homepage
  *
@@ -55,17 +55,15 @@ if ( !class_exists('acf') ) return;
             </div>
 	        <?php endif; ?>
 
-	        <?php if ( get_field('home_aline_video') ) : ?>
             <div>
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 home_aline_facts_items">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/<?php the_field('home_aline_video'); ?>"></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_1zRWKw811s?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
-	        <?php endif; ?>
 
         </div>
 
@@ -84,17 +82,12 @@ if ( !class_exists('acf') ) return;
                 </div>
 	        <?php endif; ?>
 
-	        <?php if ( get_field('home_aline_video') ) : ?>
-                <div class="space-top">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/<?php the_field('home_aline_video'); ?>"></iframe>
-                    </div>
+            <div class="space-top">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_1zRWKw811s?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-	        <?php endif; ?>
+            </div>
         </div>
 
     </div>
 </div>
-
-
-

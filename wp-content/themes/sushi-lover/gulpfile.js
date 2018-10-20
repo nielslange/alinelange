@@ -27,8 +27,8 @@
  * In paths you can add <<glob or array of globs>>. Edit the variables as per your project requirements.
  */
 
-// Disable notifier
-process.env.DISABLE_NOTIFIER = true;
+// process.env.DISABLE_NOTIFIER = true;
+
 
 // START Editing Project Variables.
 // Project related.

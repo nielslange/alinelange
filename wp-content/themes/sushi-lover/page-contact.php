@@ -24,6 +24,7 @@ get_header();
             <div class="row">
                 <div class="col-sm-8">
                     <?php the_field('contact_text') ?>
+                    <p><a href="#infos" id="more" style="z-index: 100;"><i class="fa-2x fas fa-chevron-down"></i></a></p>
                 </div>
                 <div class="col-sm-4">
                     <?php
