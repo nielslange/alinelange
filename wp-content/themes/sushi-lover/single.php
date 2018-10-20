@@ -22,7 +22,6 @@ get_header(); ?>
         <?php if ( have_posts() ) : ?>
         	<?php while ( have_posts() ) : the_post(); ?>
                 <header>
-                    <p class="date"><?php the_date(); ?></p>
                     <h1 class="page-title"><?php the_title(); ?></h1>
                     <p class="categories"><?php echo get_the_category_list(', '); ?></p>
                 </header>
