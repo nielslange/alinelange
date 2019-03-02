@@ -697,11 +697,27 @@ function my_login_stylesheet() {
     wp_enqueue_style( 'login-style', get_template_directory_uri() . '/assets/css/login.css' );
 }
 
+function debug($data) {
+	print('<pre>');
+	print_r($data);
+	print('</pre>');
+}
+
+/**
+ * Return lowest price
+ *
+ * @since Sushi Lovers 3.1
+ * @link https://docs.woocommerce.com/wc-apidocs/function-wc_price.html
+ * @return float
+ */
 add_filter('woocommerce_variable_price_html', 'bbloomer_custom_variation_price', 10, 2);
 function bbloomer_custom_variation_price( $price, $product ) {
 	$price = '';
-	if ( !$product->min_variation_price || $product->min_variation_price !== $product->max_variation_price ) $price .= '<span class="from">' . _x('From:', 'min_price', 'woocommerce') . ' </span>';
-	$price .= woocommerce_price($product->min_variation_price);
+	if ( $product->min_variation_price !== $product->max_variation_price ) {
+		$price .= '<span class="from">' . _x('From:', 'min_price', 'woocommerce') . ' </span>';
+	}
+	$price .= wc_price($product->price);
+
 	return $price;
 }
 
