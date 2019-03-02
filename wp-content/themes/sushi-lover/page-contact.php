@@ -46,6 +46,9 @@ get_header();
                     printf('<h3>%s</h3>', get_field('contact_location_title'));
                     printf('<p>%s</p>', get_field('contact_location_entry'));
 
+                    //* FEARLESS LOGO
+                    print('<br><a href="https://www.fearlessphotographers.com/photographers.cfm?photogID=1347&aline-lange"><img src="'. get_stylesheet_directory_uri() . '/images/fearlesswhite.jpg" alt="Fearless photograper Aline Lange" class="img-responsive"></a>');
+
                     ?>
                 </div>
             </div>
