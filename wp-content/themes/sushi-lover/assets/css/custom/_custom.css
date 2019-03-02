@@ -582,6 +582,10 @@ body.contact .modal-title {
 	margin: 0;
 }
 
+#blog div.nav-next .meta-nav:before {
+	content: none;
+}
+
 @media screen and (max-width: 767px){
 	#sidebar-blog,
 	#woocommerce-sidebar {
