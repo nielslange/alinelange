@@ -2110,6 +2110,8 @@ textarea.ginput_container input,textarea.ginput_container select,textarea.ginput
 #shop .widget_product_categories ul{margin:20px 0;padding:0}
 #shop .widget_product_categories ul li{list-style:none;margin:5px 0}
 .woocommerce .woocommerce-result-count,.woocommerce-page .woocommerce-result-count{float:none}
+.woocommerce div.product div.images .flex-control-thumbs{display:-ms-grid;display:grid;-ms-grid-columns:1fr 1fr 1fr 1fr;grid-template-columns:1fr 1fr 1fr 1fr;grid-gap:5px;margin:4px 0 0 0}
+.woocommerce div.product div.images .flex-control-thumbs li{width:100%}
 .woocommerce-message{border-top-color:#54b2b1 !important}
 .woocommerce-message:before{color:#54b2b1 !important}
 .woocommerce-page h1.page-title{margin-top:0}

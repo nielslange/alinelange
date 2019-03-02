@@ -1,5 +1,3 @@
-
-
 @charset "UTF-8";
 
 html, body {
@@ -1464,6 +1462,17 @@ fieldset[disabled] .gform_button.active {
 	.woocommerce[class*="columns-"] ul.products li.product {
 		width: 22.05%;
 	}
+}
+
+.woocommerce div.product div.images .flex-control-thumbs {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 5px;
+	margin: 4px 0 0 0;
+}
+
+.woocommerce div.product div.images .flex-control-thumbs li {
+	width: 100%;
 }
 
 .woocommerce-message {
